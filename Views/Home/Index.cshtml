@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Welcome to Our Educational Platform";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Aboard!</h1>
+    <p>Discover how to craft <a href="https://learn.microsoft.com/aspnet/core">ASP.NET Core Web applications</a>.</p>
+</div>
+
+<section>
+    <h3>Student Profiles Access</h3>
+    <form asp-action="GetStudentProfiles" method="get">
+        <label for="studentId">Student ID (leave empty to fetch all):</label>
+        <input id="studentId" name="studentId" placeholder="ID Number" />
+        <button type="submit">Retrieve</button>
+    </form>
+</section>
+
+<section>
+    <h3>Registration of New Student</h3>
+    <form asp-action="PostStudentProfile" method="post">
+        <label for="name">Name:</label>
+        <input id="name" name="name" placeholder="Full Name" />
+
+        <label for="gpa">GPA:</label>
+        <input id="gpa" name="gpa" placeholder="GPA Score" />
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" placeholder="Email Address" />
+
+        <label for="major">Major:</label>
+        <input id="major" name="major" placeholder="Major Field of Study" />
+
+        <label for="phone">Phone Number:</label>
+        <input id="phone" name="phone" placeholder="Contact Number" />
+
+        <label for="username">Username:</label>
+        <input id="username" name="username" placeholder="Preferred Username" />
+
+        <label for="password">Password:</label>
+        <input id="password" name="password" placeholder="Secure Password" type="password" />
+
+        <button type="submit">Register</button>
+    </form>
+</section>
+
+<section>
+    <h3>Modify an Existing Student Profile</h3>
+    <form asp-action="PutStudentProfile" method="post">
+        <input name="id" placeholder="Student ID to Update" />
+        <input name="name" placeholder="Updated Name" />
+        <input name="gpa" placeholder="Updated GPA" />
+        <input name="email" placeholder="Updated Email" />
+        <input name="major" placeholder="Updated Major" />
+        <input name="phone" placeholder="Updated Phone Number" />
+        <input name="username" placeholder="Updated Username" />
+        <input name="password" placeholder="New Password" type="password" />
+        <button type="submit">Update Profile</button>
+    </form>
+</section>
+
+<section>
+    <h3>Remove a Student Profile</h3>
+    <form asp-action="DeleteStudentProfile" method="post">
+        <label for="deleteId">Student ID to Remove:</label>
+        <input id="deleteId" name="studentId" placeholder="ID Number" />
+        <button type="submit">Delete</button>
+    </form>
+</section>
+  
